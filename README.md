@@ -1,14 +1,79 @@
-# flutter_project_template
-[![flutter_project_template](https://nokycucwgzweensacwfy.supabase.co/functions/v1/get_project_badge?projectId=149)](https://nokycucwgzweensacwfy.supabase.co/functions/v1/get_project_url?projectId=149)
 
-📖 Template for flutter projects using solid_lints, CI for tests and analysis.
+# Solid Software Recruitment Task
 
-- Uses latest stable flutter
-- Repo name as your project name
-- Organization from your profile email address or default
+  
+This Flutter application was created as part of the Solid Software recruitment task.
 
-# Usage
-1. Press "Use this template" on the menu.
-2. Fill Github form with your new repo name and press "Create repository from template"
-3. Wait for it to be created and set up action is complete. In a couple of minutes, you'll see the flutter project created in your repo once Github Actions are complete.
-4. Clone and code.
+  
+## Features
+
+- Displays a centered "Hello there" message on the screen.
+
+- Changes the background color to a random RGB value when the screen is tapped.
+
+- Generates colors without using any external libraries.
+
+- Code quality is ensured and verified using `solid_lints`.
+
+  
+## Getting Started
+
+  
+
+First, set up FVM (Flutter Version Manager):
+
+[Getting Started with FVM](https://fvm.app/documentation/getting-started/installation)
+
+  
+
+Specify the Flutter version:
+
+  
+
+```bash
+
+fvm  use  3.29.3
+
+```
+
+  
+
+Then install dependencies and run the app:
+
+  
+
+```bash
+
+fvm  flutter  pub  get
+
+fvm  flutter  run
+
+```
+
+  
+
+## Git Hooks Setup
+
+  
+
+This project uses a pre-commit hook to ensure code quality.
+
+  
+
+Set up Git hooks by running:
+
+  
+
+```bash
+
+git  config  core.hooksPath  .githooks
+
+```
+
+  
+
+## Notes
+
+- Random colors are generated using Dart’s built-in `Random` class.
+
+- The project follows clean code principles, adhering to the DRY and KISS guidelines.
