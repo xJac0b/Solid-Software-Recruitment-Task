@@ -18,7 +18,6 @@ This Flutter application was created as part of the Solid Software recruitment t
   
 ## Getting Started
 
-  
 
 First, set up FVM (Flutter Version Manager):
 
@@ -70,6 +69,15 @@ git  config  core.hooksPath  .githooks
 
 ```
 
+## Testing
+
+This project uses Flutter's widget testing to ensure UI components behave as expected.
+
+How to run tests
+
+```bash
+fvm flutter test
+```
   
 
 ## Notes
