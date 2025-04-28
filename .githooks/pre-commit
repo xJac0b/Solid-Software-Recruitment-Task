@@ -1,0 +1,16 @@
+#!/bin/sh
+# Pre-commit hook for Flutter to run static code analysis
+
+echo "Running flutter analyze..."
+
+fvm flutter analyze
+
+RESULT=$?
+
+if [ $RESULT -ne 0 ]; then
+  echo "❌ Commit aborted due to analyzer errors."
+  exit 1
+fi
+
+echo "✅ No issues found. Proceeding with commit."
+exit 0
