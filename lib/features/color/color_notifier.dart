@@ -18,11 +18,11 @@ class ColorNotifier extends ValueNotifier<Color> {
 
   /// Changes the color to a random color.
   void changeColor() {
-    value = generateColor();
+    value = _generateColor();
   }
 
   /// Generates a random color.
-  Color generateColor() {
+  Color _generateColor() {
     final Random random = Random();
 
     final red = random.nextInt(_colorsNumber);
