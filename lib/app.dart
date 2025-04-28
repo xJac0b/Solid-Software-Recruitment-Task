@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:solid_software_recruitment_task/features/color_notifier.dart';
-import 'package:solid_software_recruitment_task/features/color_page.dart';
-import 'package:solid_software_recruitment_task/features/color_provider.dart';
+import 'package:solid_software_recruitment_task/features/color/color_notifier.dart';
+import 'package:solid_software_recruitment_task/features/color/color_page.dart';
+import 'package:solid_software_recruitment_task/features/color/color_provider.dart';
 
 /// This is the main entry point of the application.
 class App extends StatelessWidget {

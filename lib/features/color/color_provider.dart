@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:solid_software_recruitment_task/features/color_notifier.dart';
+import 'package:solid_software_recruitment_task/features/color/color_notifier.dart';
 
 /// This class provides a way to access the [ColorNotifier] from the widget tree
 class ColorProvider extends InheritedNotifier<ColorNotifier> {

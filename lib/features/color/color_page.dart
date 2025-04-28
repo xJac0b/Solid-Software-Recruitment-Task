@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:solid_software_recruitment_task/features/color_provider.dart';
+import 'package:solid_software_recruitment_task/features/color/color_provider.dart';
 import 'package:solid_software_recruitment_task/styles/app_typography.dart';
 
 /// Page with a background color that changes on tap and a centered title.
