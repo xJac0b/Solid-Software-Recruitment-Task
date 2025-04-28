@@ -1,40 +1,58 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:solid_software_recruitment_task/app.dart';
+import 'package:solid_software_recruitment_task/features/color/color_notifier.dart';
+import 'package:solid_software_recruitment_task/features/color/color_page.dart';
+import 'package:solid_software_recruitment_task/features/color/color_provider.dart';
 
 void main() {
   testWidgets('displays "Hello there" title', (WidgetTester tester) async {
-    // Arrange
     await tester.pumpWidget(const App());
 
-    // Assert
     expect(find.text('Hello there'), findsOneWidget);
   });
 
-  testWidgets('changes background color when tapping', (
+  testWidgets('color changes when tapping on the page', (
     WidgetTester tester,
   ) async {
-    // Arrange
-    await tester.pumpWidget(const App());
+    final mockColorProvider = ColorNotifier(Colors.white);
+    final initialColor = mockColorProvider.color;
 
-    // Get the initial background color
-    final coloredBoxFinder = find.byType(ColoredBox);
-    final ColoredBox coloredBoxBefore = tester.widget<ColoredBox>(
-      coloredBoxFinder,
+    await tester.pumpWidget(
+      MaterialApp(
+        home: ColorProvider(
+          notifier: mockColorProvider,
+          child: const ColorPage(),
+        ),
+      ),
     );
-    final Color colorBefore = coloredBoxBefore.color;
 
-    // Act
+    final initialContainer = tester.widget<AnimatedContainer>(
+      find.byType(AnimatedContainer),
+    );
+
+    expect(
+      (initialContainer.decoration as BoxDecoration?)?.color,
+      initialColor,
+    );
+
     await tester.tap(find.byType(InkWell));
+
+    // Trigger animation
     await tester.pump();
 
-    // Get the background color after tap
-    final ColoredBox coloredBoxAfter = tester.widget<ColoredBox>(
-      coloredBoxFinder,
-    );
-    final Color colorAfter = coloredBoxAfter.color;
+    // Verify new color is different
+    expect(mockColorProvider.color, isNot(equals(initialColor)));
 
-    // Assert
-    expect(colorBefore, isNot(equals(colorAfter)));
+    await tester.pump();
+    final updatedContainer = tester.widget<AnimatedContainer>(
+      find.byType(AnimatedContainer),
+    );
+
+    // Verify new color is applied
+    expect(
+      (updatedContainer.decoration as BoxDecoration?)?.color,
+      mockColorProvider.color,
+    );
   });
 }

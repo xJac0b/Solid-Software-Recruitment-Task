@@ -14,12 +14,15 @@ class ColorPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final colorProvider = ColorProvider.of(context);
 
+    const animationDuration = 175;
+
     return Scaffold(
       body: InkWell(
         splashFactory: NoSplash.splashFactory,
         highlightColor: Colors.transparent,
         onTap: colorProvider.changeColor,
-        child: ColoredBox(
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: animationDuration),
           color: colorProvider.color,
           child: const Center(child: Text(title, style: AppTypography.title)),
         ),
