@@ -11,6 +11,8 @@ This Flutter application was created as part of the Solid Software recruitment t
 
 - Changes the background color to a random RGB value when the screen is tapped.
 
+- Smoothly animates the background color transition on tap.
+
 - Generates colors without using any external libraries.
 
 - Code quality is ensured and verified using `solid_lints`.
