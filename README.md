@@ -33,7 +33,7 @@ Specify the Flutter version:
 
 ```bash
 
-fvm  use  3.29.3
+fvm use 3.29.3
 
 ```
 
@@ -45,9 +45,9 @@ Then install dependencies and run the app:
 
 ```bash
 
-fvm  flutter  pub  get
+fvm flutter pub get
 
-fvm  flutter  run
+fvm flutter run
 
 ```
 
@@ -67,7 +67,7 @@ Set up Git hooks by running:
 
 ```bash
 
-git  config  core.hooksPath  .githooks
+git config core.hooksPath .githooks
 
 ```
 
